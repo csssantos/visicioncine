@@ -13,7 +13,7 @@ const MovieFeatured = () => {
                 <div className='overlay'></div>
                 <div className='px-5' style={{ height: "100%" }}>
                     <div className='row' style={{ height: "100%" }}>
-                        <div className='col-12 col-md-5'>
+                        <div className='col-12 col-sm-12 col-md-5'>
                             <div className='info-featured'>
                                 <h6 className='mb-4'>DESTAQUE VISIONCINE</h6>
                                 <img src={logoFeatured} className='mb-4' alt='The Gifted'></img>
