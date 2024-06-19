@@ -290,6 +290,7 @@ span.separed::after {
   gap: 5px;
 }
 
+
 .movie .info-movie .info .btns button {
   font-size: 14px;
   border-radius: 5px;
@@ -299,6 +300,25 @@ span.separed::after {
   align-items: center;
   justify-content: center;
   transition: all 0.5;
+}
+
+button.btn {
+  font-size: 14px;
+  border-radius: 5px;
+  background: rgba(var(--primary), 50%);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5;
+  border: none;
+  outline: none;
+  color: white;
+  margin-bottom: 0;
+}
+
+button.primary {
+  background: linear-gradient(271deg, rgb(var(--secondaryFree)) 0%, rgb(var(--terciaryFree)) 100%);
 }
 
 .movie .info-movie .info .btns button:hover {
@@ -478,6 +498,7 @@ img {
   color: white;
   background: rgba(var(--primary), 50%);
   transition: background 0.5s ease-in-out !important;
+
 }
 
 .featured .btns button:hover:not(:first-child) {
@@ -578,4 +599,128 @@ img {
 
 .featured .tvshow .episode .backdrop h6 b {
   color: rgb(var(--secondaryFree));
+}
+
+.posters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100%;
+}
+
+.posters .poster {
+  min-width: 390px;
+  min-height: 200px;
+  background-color: rgba(var(--primary-s));
+  background-size: 100%;
+  background-position: center center;
+  position: relative;
+  transition: all 0.5s;
+  padding: 15px;
+  flex: 1 1;
+  display: flex;
+  align-items: end;
+}
+
+.posters .poster:hover {
+  background-size: 110%;
+}
+
+.posters .poster .info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posters .poster .info h5 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.posters .poster .info p {
+  width: 230px;
+  margin-bottom: 0;
+  font-size: 11px;
+  line-height: 10px;
+}
+
+.line-two {
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.section-streaming {
+  width: 100%;
+  height: 885px;
+}
+
+.section-streaming * {
+  z-index: 9;
+}
+
+.section-streaming .bg {
+  width: 100%;
+  height: 600px;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: -200px;
+}
+
+.section-streaming .bg::before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  background-image: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
+}
+
+.section-streaming .bg::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  background-image: linear-gradient(to top, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
+}
+
+.section-streaming .bg .container-fluid {
+  min-height: 65%;
+  max-height: 80%;
+}
+
+.section-streaming .bg * {
+  z-index: 3;
+  position: relative;
+}
+
+.section-streaming .bg .title {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section-streaming .bg img {
+  width: 25%;
+  max-width: 405px;
+  filter: grayscale(100%) sepia(100%) brightness(43%) saturate(0%) contrast(1000%) invert(100%);
+  transition: width 0.5s ease;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .section-streaming .bg img {
+    width: 250px;
+  }
 }

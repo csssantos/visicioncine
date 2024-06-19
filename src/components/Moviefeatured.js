@@ -1,7 +1,9 @@
 // src/MeuComponente.js
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import logoFeatured from '../assets/featured-logo.png';
 import hbomax from '../assets/logos/hbomax.png';
+import { motion } from 'framer-motion'; // Importando motion do framer-motion
 
 const MovieFeatured = () => {
 
