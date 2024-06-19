@@ -11,11 +11,7 @@ const MovieFeatured = () => {
                 <div className='overlay'></div>
                 <div className='px-5' style={{ height: "100%" }}>
                     <div className='row' style={{ height: "100%" }}>
-<<<<<<< Updated upstream
-                        <div className='col-12 col-sm-12 col-md-5'>
-=======
                         <div className='col-12 col-md-12 col-xl-5'>
->>>>>>> Stashed changes
                             <div className='info-featured'>
                                 <h6 className='mb-4'>DESTAQUE VISIONCINE</h6>
                                 <img src={logoFeatured} className='mb-4' alt='The Gifted'></img>
