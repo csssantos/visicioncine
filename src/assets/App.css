@@ -361,17 +361,89 @@ button.primary {
   font-size: 20px;
 }
 
-.featured {
+.featureds-container {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.featureds-container .sliderB {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.featureds-container .sliderB button {
+  border: none;
+  outline: none;
+  font-size: 30px;
+  background-color: transparent;
+  color: white;
+  position: relative;
+  z-index: 999;
+}
+
+.featureds-container .sliderF {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10vh;
+  gap: 10px;
+  z-index: 999;
+}
+
+.featureds-container .sliderF div {
+  border: none;
+  outline: none;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 50%;
+  padding: 0 !important;
+}
+
+.featureds-container .sliderF div.active {
+  background-color: rgba(var(--secondaryFree));
+}
+
+.featureds {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.featureds .sliderF button {
+  border: none;
+  outline: none;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.featureds .featured {
+  width: 100%;
+  height: 100%;
   background-image: url('./featured.jpg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  flex: 0 0 auto;
 }
 
-.featured::before {
+.featureds .featured::before {
   content: ' ';
   position: absolute;
   left: 0;
@@ -382,7 +454,7 @@ button.primary {
   background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 97%);
 }
 
-.featured::after {
+.featureds .featured::after {
   content: ' ';
   position: absolute;
   left: 0;
@@ -391,6 +463,10 @@ button.primary {
   height: 30%;
   z-index: 2;
   background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 97%);
+}
+
+.featureds .featured .infos-movie img {
+  filter: grayscale(100%) sepia(100%) brightness(43%) saturate(0%) contrast(1000%) invert(100%);  
 }
 
 
@@ -408,19 +484,19 @@ img {
   background: rgba(0, 0, 0, 0.753);
 }
 
-.featured .info-featured {
+.featureds .featured .info-featured {
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  z-index: 999;
 }
 
-.featured .info-featured h6 {
+.featureds .featured .info-featured h6 {
   letter-spacing: 15px;
   font-size: 11px;
   position: relative;
@@ -429,7 +505,7 @@ img {
   align-items: center;
 }
 
-.featured .info-featured h6::before {
+.featureds .featured .info-featured h6::before {
   content: ' ';
   position: absolute;
   width: 50px;
@@ -439,7 +515,7 @@ img {
   transform: rotateY(180deg);
 }
 
-.featured .info-featured h6::after {
+.featureds .featured .info-featured h6::after {
   content: ' ';
   position: absolute;
   width: 50px;
@@ -449,11 +525,11 @@ img {
   transform: rotateY(180deg);
 }
 
-.featured .info-featured img:not(.producter) {
+.featureds .featured .info-featured img:not(.producter) {
   width: 80%;
 }
 
-.featured .info-featured .sinopse {
+.featureds .featured .info-featured .sinopse {
   font-size: 13px !important;
   margin-bottom: 0;
   display: -webkit-box; 
@@ -463,18 +539,18 @@ img {
   overflow: hidden; 
 }
 
-.featured .info-featured .infos-movie {
+.featureds .featured .info-featured .infos-movie {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.featured .info-featured .infos-movie img {
+.featureds .featured .info-featured .infos-movie img {
   width: 12%;
 }
 
-.featured .info-featured .infos-movie p {
+.featureds .featured .info-featured .infos-movie p {
   margin-bottom: 0;
   color: white;
   font-weight: bold;
@@ -482,16 +558,16 @@ img {
   text-transform: uppercase;
 }
 
-.featured .info-featured .infos-movie p i {
+.featureds .featured .info-featured .infos-movie p i {
   font-size: 20px;
 }
 
-.featured .btns {
+.featureds .featured .btns {
   display: flex;
   gap: 15px;
 }
 
-.featured .btns button {
+.featureds .featured .btns button {
   outline: none;
   border: none;
   padding: 5px 10px;
@@ -501,19 +577,19 @@ img {
 
 }
 
-.featured .btns button:hover:not(:first-child) {
+.featureds .featured .btns button:hover:not(:first-child) {
   background: linear-gradient(271deg, rgb(var(--secondaryFree)) 0%, rgb(var(--terciaryFree)) 100%);
   transition: background 0.5s ease-in-out !important;
 }
 
-.featured .btns button:first-child {
+.featureds .featured .btns button:first-child {
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 3px;
   background: linear-gradient(271deg, rgb(var(--secondaryFree)) 0%, rgb(var(--terciaryFree)) 100%);
 }
 
-.featured .tvshow {
+.featureds .featured .tvshow {
   position: absolute;
   bottom: 90px;
   right: 10px;
@@ -521,7 +597,7 @@ img {
   transition: all 0.5s ease-in-out;
 }
 
-.featured .tvshow .episode {
+.featureds .featured .tvshow .episode {
   width: 270px;
   height: 180px;
   background-color: rgba(255,255,255, 0.158);
@@ -534,37 +610,37 @@ img {
   transition: all 0.5s ease-in-out;
 }
 
-.featured .tvshow .episode:hover {
+.featureds .featured .tvshow .episode:hover {
   margin-top: -20px;
   z-index: 14 !important;
 }
 
-.featured .tvshow:hover > :not(:hover) {
+.featureds .featured .tvshow:hover > :not(:hover) {
   opacity: 0.1;
 }
 
-.featured .tvshow:hover > :not(:hover) button {
+.featureds .featured .tvshow:hover > :not(:hover) button {
   opacity: 0;
 }
 
-.featured .tvshow .episode:nth-child(1) {
+.featureds .featured .tvshow .episode:nth-child(1) {
   z-index: 11;
 }
 
-.featured .tvshow .episode:nth-child(2) {
+.featureds .featured .tvshow .episode:nth-child(2) {
   z-index: 10;
 }
-.featured .tvshow .episode:nth-child(3) {
+.featureds .featured .tvshow .episode:nth-child(3) {
   z-index: 9;
 }
-.featured .tvshow .episode:nth-child(4) {
+.featureds .featured .tvshow .episode:nth-child(4) {
   z-index: 8;
 }
-.featured .tvshow .episode:nth-child(5) {
+.featureds .featured .tvshow .episode:nth-child(5) {
   z-index: 7;
 }
 
-.featured .tvshow .episode .backdrop {
+.featureds .featured .tvshow .episode .backdrop {
   width: 100%;
   height: 100%;
   background-color: white;
@@ -579,16 +655,16 @@ img {
   justify-content: center;
 }
 
-.featured .tvshow .episode .backdrop button {
+.featureds .featured .tvshow .episode .backdrop button {
   z-index: 99;
   transition: all 0.5s ease-in-out;
 }
 
-.featured .tvshow .episode .backdrop .overlay {
+.featureds .featured .tvshow .episode .backdrop .overlay {
   background-color: rgba(0, 0, 0, 0.479);
 }
 
-.featured .tvshow .episode .backdrop h6 {
+.featureds .featured .tvshow .episode .backdrop h6 {
   position: absolute;
   top: 5px;
   left: 10px;
@@ -597,7 +673,7 @@ img {
   font-weight: bold;
 }
 
-.featured .tvshow .episode .backdrop h6 b {
+.featureds .featured .tvshow .episode .backdrop h6 b {
   color: rgb(var(--secondaryFree));
 }
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import hboLogo from '../assets/logos/max/hbo-max-grand.png';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
@@ -12,11 +11,11 @@ const Sectionstreaming = () => {
     const apiKey = '07d652fc4000bcc7676d6aaec88eaffd';
     const omdbApiKey = 'ba1f4581';
 
-    const formatRuntime = (runtime) => {
-        const hours = Math.floor(runtime / 60);
-        const minutes = runtime % 60;
-        return `${hours}h ${minutes}m`;
-    };
+    // const formatRuntime = (runtime) => {
+    //     const hours = Math.floor(runtime / 60);
+    //     const minutes = runtime % 60;
+    //     return `${hours}h ${minutes}m`;
+    // };
 
     const fetchData = async (url) => {
         const response = await axios.get(url);

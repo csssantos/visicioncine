@@ -5,8 +5,8 @@ import Sectionstreaming from './components/Sectionstreaming';
 function App() {
   return (
     <>
-      <MovieFeatured />
       <div className='py-5'>
+      <MovieFeatured />
         <MoviesSection />
       </div>
       <Sectionstreaming />
