@@ -796,7 +796,18 @@ img {
 }
 
 @media (max-width: 768px) {
+  .featureds-container {
+    height: 468px;
+    top: -50px;
+    position: relative;
+  }
+  .featureds .featured {
+    height: 100%;
+  }
   .section-streaming .bg img {
     width: 250px;
+  }
+  .featureds-container .sliderF {
+    bottom: 3vh;
   }
 }
